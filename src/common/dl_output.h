@@ -31,6 +31,10 @@
 
 #include "dl_base.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /******************************************************************************/
 
 /* outputs the hex dump of the specified data (iPtr/iNumBytes) to the */
@@ -43,5 +47,9 @@ void DL_OUTPUT_Hex ( FILE           *iOutFile,
 					 DL_UINT32       iNumBytes );
 
 /******************************************************************************/
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __INC_DL_OUTPUT */

@@ -18,13 +18,15 @@ class ISO8583 : public node::ObjectWrap {
 
     DL_ISO8583_HANDLER isoHandler;
     DL_ISO8583_MSG isoMsg;
-    DL_UINT8 packBuf[1000];
+    DL_UINT8 packBuf[1024];
     DL_UINT16 packedSize;
 
     static NAN_METHOD(New);
     static NAN_METHOD(UnpackSync);
     static NAN_METHOD(PackSync);
     static NAN_METHOD(SetField);
+    static NAN_METHOD(Dump);
+    static NAN_METHOD(OutputHex);
     static NAN_METHOD(Clear);
 };
 
