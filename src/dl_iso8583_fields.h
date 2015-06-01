@@ -35,6 +35,10 @@
 
 #include "dl_iso8583_common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /******************************************************************************/
 
 DL_ERR _DL_ISO8583_FIELD_Pack ( DL_UINT16                  iField,
@@ -48,5 +52,9 @@ DL_ERR _DL_ISO8583_FIELD_Unpack ( DL_UINT16                  iField,
 								  DL_UINT8                 **ioPtr );
 
 /******************************************************************************/
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __INC_DL_ISO8583_FIELDS */

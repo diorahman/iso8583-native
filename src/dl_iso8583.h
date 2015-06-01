@@ -36,6 +36,10 @@
 #include "dl_iso8583_common.h"
 #include "dl_iso8583_fields.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /******************************************************************************/
 
 // Initialises an ISO8583 message
@@ -122,5 +126,9 @@ void DL_ISO8583_MSG_Dump ( FILE                     *iOutFile,
 					       const DL_ISO8583_MSG     *iMsg );
 
 /******************************************************************************/
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __INC_DL_ISO8583 */

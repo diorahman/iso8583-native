@@ -125,6 +125,10 @@ typedef struct DL_ISO8583_MSG_S DL_ISO8583_MSG;
 
 /******************************************************************************/
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // attempts to allocate memory for a field within the ISO8583 message
 // NB used internally - not for client usage
 // returns: error code
@@ -142,5 +146,7 @@ void DL_ISO8583_COMMON_SetHandler ( DL_ISO8583_FIELD_DEF *iFieldDefArr,
 								    DL_ISO8583_HANDLER   *oData );
 
 /******************************************************************************/
-
+#ifdef __cplusplus
+}
+#endif
 #endif /* __INC_DL_ISO8583_COMMON */
