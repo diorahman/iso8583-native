@@ -1,7 +1,5 @@
 var addon = require('bindings')('iso8583');
 var ISO8583 = addon.ISO8583;
-var iso8583 = new ISO8583();
-
 var packedMessage;
 
 describe('ISO 8583 message packing and unpacking', function(){

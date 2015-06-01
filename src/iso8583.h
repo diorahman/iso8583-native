@@ -3,6 +3,7 @@
 
 #include "dl_iso8583.h"
 #include "dl_iso8583_defs_1993.h"
+#include "dl_iso8583_defs_1987.h"
 
 #include <nan.h>
 
@@ -13,8 +14,10 @@ class ISO8583 : public node::ObjectWrap {
     static v8::Persistent<v8::Function> constructor;
 
   private:
-    explicit ISO8583();
+    explicit ISO8583(); 
     ~ISO8583();
+    void set1987();
+    void set1993();
 
     DL_ISO8583_HANDLER isoHandler;
     DL_ISO8583_MSG isoMsg;
@@ -28,6 +31,8 @@ class ISO8583 : public node::ObjectWrap {
     static NAN_METHOD(Dump);
     static NAN_METHOD(OutputHex);
     static NAN_METHOD(Clear);
+    static NAN_METHOD(Set1993);
+    static NAN_METHOD(Set1987);
 };
 
 #endif

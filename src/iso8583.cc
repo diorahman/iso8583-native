@@ -12,6 +12,16 @@ ISO8583::~ISO8583() {
   DL_ISO8583_MSG_Free(&isoMsg);
 }
 
+void ISO8583::set1987() {
+  DL_ISO8583_DEFS_1987_GetHandler(&isoHandler);
+  DL_ISO8583_MSG_Init(NULL, 0, &isoMsg);
+}
+
+void ISO8583::set1993() {
+  DL_ISO8583_DEFS_1993_GetHandler(&isoHandler);
+  DL_ISO8583_MSG_Init(NULL, 0, &isoMsg);
+}
+
 Persistent<Function> ISO8583::constructor;
 
 NAN_METHOD(ISO8583::New) {
@@ -117,6 +127,20 @@ NAN_METHOD(ISO8583::OutputHex) {
   NanReturnUndefined();
 }
 
+NAN_METHOD(ISO8583::Set1987) {
+  NanScope();
+  ISO8583 * iso8583 = ObjectWrap::Unwrap<ISO8583>(args.Holder());
+  iso8583->set1987();
+  NanReturnUndefined();
+}
+
+NAN_METHOD(ISO8583::Set1993) {
+  NanScope();
+  ISO8583 * iso8583 = ObjectWrap::Unwrap<ISO8583>(args.Holder());
+  iso8583->set1993();
+  NanReturnUndefined();
+}
+
 void ISO8583::Init(Handle<Object> exports) {
   NanScope();
   Local<FunctionTemplate> tpl = NanNew<FunctionTemplate>(New);
@@ -130,6 +154,8 @@ void ISO8583::Init(Handle<Object> exports) {
   NODE_SET_PROTOTYPE_METHOD(tpl, "clear", Clear);
   NODE_SET_PROTOTYPE_METHOD(tpl, "dump", Dump);
   NODE_SET_PROTOTYPE_METHOD(tpl, "outputHex", OutputHex);
+  NODE_SET_PROTOTYPE_METHOD(tpl, "use1987", Set1987);
+  NODE_SET_PROTOTYPE_METHOD(tpl, "use1993", Set1993);
   
   NanAssignPersistent(constructor, tpl->GetFunction());
   exports->Set(NanNew("ISO8583"), tpl->GetFunction());

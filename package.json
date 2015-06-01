@@ -1,6 +1,6 @@
 {
   "name": "iso8583-native",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Packing and unpacking ISO 8583 message",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,13 @@
     "mocha": "^2.2.5",
     "should": "^6.0.3"
   },
-  "gypfile": true
+  "gypfile": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diorahman/iso8583-native.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diorahman/iso8583-native/issues"
+  },
+  "homepage": "https://github.com/diorahman/iso8583-native#readme"
 }

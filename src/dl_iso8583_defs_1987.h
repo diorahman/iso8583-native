@@ -32,11 +32,19 @@
 #include "dl_base.h"
 #include "dl_iso8583_common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /******************************************************************************/
 
 // sets the specified handler
 void DL_ISO8583_DEFS_1987_GetHandler ( DL_ISO8583_HANDLER *oHandler );
 
 /******************************************************************************/
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __INC_DL_ISO8583_DEFS_1987 */
