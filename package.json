@@ -1,6 +1,6 @@
 {
   "name": "iso8583-native",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Packing and unpacking ISO 8583 message",
   "main": "index.js",
   "scripts": {
