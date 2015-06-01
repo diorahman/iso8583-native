@@ -60,9 +60,7 @@ NAN_METHOD(ISO8583::UnpackSync) {
   for (DL_UINT16 i = 0; i < isoHandler->fieldItems; i++) {
     if (NULL != isoMsg->field[i].ptr) {
       DL_ISO8583_FIELD_DEF * fieldDef = DL_ISO8583_GetFieldDef(i, &iso8583->isoHandler);
-      obj->Set(NanNew(i), 
-          NanNewBufferHandle((const char *)isoMsg->field[i].ptr, 
-            strlen((const char*) isoMsg->field[i].ptr)));
+      obj->Set(NanNew(i), NanNewBufferHandle((const char *)isoMsg->field[i].ptr, isoMsg->field[i].len));
     }
   }
   NanReturnValue(obj);
