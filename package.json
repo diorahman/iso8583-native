@@ -1,0 +1,28 @@
+{
+  "name": "iso8583-native",
+  "version": "1.0.0",
+  "description": "Packing and unpacking ISO 8583 message",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require should test.js",
+    "install": "node-gyp rebuild"
+  },
+  "keywords": [
+    "iso",
+    "8583",
+    "native",
+    "iso8583",
+    "pack",
+    "unpack"
+  ],
+  "author": "Dhi Aurrahman <diorahman@rockybars.com>",
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^1.8.4"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "should": "^6.0.3"
+  },
+  "gypfile": true
+}
